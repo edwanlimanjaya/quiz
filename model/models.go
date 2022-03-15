@@ -1,8 +1,5 @@
 package model
 
-// "math/big"
-// "time"
-
 type Wallet struct {
 	Id_Wallet   int    `json : id_wallet`
 	Currency    string `json : currency`
@@ -32,9 +29,9 @@ type WalletsResponse struct {
 }
 
 type TransactionResponse struct {
-	Status  string `json : status`
-	Message string `json : message`
-	Data    Wallet `json : data`
+	Status  string      `json : status`
+	Message string      `json : message`
+	Data    Transaction `json : data`
 }
 
 type TransactionsResponse struct {
@@ -43,14 +40,14 @@ type TransactionsResponse struct {
 	Data    []Transaction `json : data`
 }
 
-type Response struct {
+type ResponseAll struct {
 	Status          string        `json : status`
 	Message         string        `json : message`
 	DataTransaction []Transaction `json : data transaction`
 	DataWallet      []Wallet      `json : data wallet`
 }
 
-type ErrorResponse struct {
+type Response struct {
 	Status  string `json : status`
 	Message string `json : message`
 }

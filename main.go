@@ -19,7 +19,7 @@ func main() {
 	// router.HandleFunc("/update/user/{user_id}", controllers.UpdateUser).Methods("PUT")
 
 	router.HandleFunc("/get/walletstransactions", controllers.GetAllWalletTransactions).Methods("GET")
-	// router.HandleFunc("/insert/product", controllers.InsertProduct).Methods("POST")
+	router.HandleFunc("/insert/transaction", controllers.InsertTransaction).Methods("POST")
 	// router.HandleFunc("/delete/product/{product_id}", controllers.DeleteProduct).Methods("DELETE")
 	// router.HandleFunc("/update/product/{product_id}", controllers.UpdateProduct).Methods("PUT")
 
@@ -29,7 +29,7 @@ func main() {
 	// router.HandleFunc("/update/transaction/{transaction_id}", controllers.UpdateTransaction).Methods("PUT")
 
 	// router.HandleFunc("/get/all/{user_id}", controllers.GetAllDetailTransactions).Methods("GET")
-	// router.HandleFunc("/login/user", controllers.LoginUser).Methods("POST")
+	router.HandleFunc("/login/wallet", controllers.Login).Methods("POST")
 
 	http.Handle("/", router)
 	log.Println("Connected to port 8000")
